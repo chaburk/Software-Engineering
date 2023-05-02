@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Two</title>
+</head>
+<body>
+    <h1>Practice Two</h1>
+    <div class="altered">
+        Paragraph to be altered
+    </div>
+    <div class="inputs">
+        Border R(0-255): <input type="text" name="" id="border-r"><br>
+        Border G(0-255): <input type="text" name="" id="border-g"><br>
+        Border B(0-255): <input type="text" name="" id="border-b"><br>
+        Border Width: <input type="text" name="" id="border-w"><br>
+        Background R(0-255): <input type="text" name="" id="back-r"><br>
+        Background G(0-255): <input type="text" name="" id="back-g"><br>
+        Background B(0-255): <input type="text" name="" id="back-b"><br>
+        <button id="btn">Change the color!</button>
+        </div>
+    </div>
+</body>
+<style>
+    .altered{
+        border: 2px solid brown;
+        background-color: aqua;
+    }
+</style>
+<script>
+    const a = document.getElementById("border-r")
+    const b = document.getElementById("border-g")
+    const c = document.getElementById("border-b")
+    const borderW = document.getElementById("border-w")
+    const backR = document.getElementById("back-r")
+    const backG = document.getElementById("back-g")
+    const backB = document.getElementById("back-b")
+    const btn = document.getElementById("btn")
+    const div = document.querySelector(".altered")
+    
+    btn.addEventListener("click", () => {
+        console.log(typeof(a.value))
+        div.style.backgroundColor='rgb(' + a.value + ',' + b.value + ',' + c.value + ')';
+        div.style.borderWidth = `${borderW.value}px`;
+        div.style.borderColor = 'rgb(' + backR.value + ',' + backG.value + ',' + backB.value + ')';
+    })
+    
+</script>
+</html>

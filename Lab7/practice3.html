@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Three</title>
+</head>
+<body>
+    <h1>Practice Three</h1>
+    <div>
+        First Password:
+        <input type="text" id="first-password">
+        Second Password:
+        <input type="text" id="second-password">
+    </div>
+    <button id="validateBtn">Validate Your Passwords</button>
+</body>
+<style>
+
+    button {
+        margin-top: 15px;
+    }
+</style>
+<script>
+    const first = document.getElementById("first-password")
+    const second = document.getElementById("second-password")
+    const btn = document.getElementById("validateBtn")
+    btn.addEventListener("click", () => {
+        if(first.value.length < 8){
+            alert("The first password is less than 8 characters")
+        }
+        else if (second.value.length < 8){
+            alert("The second password is less than 8 characters")
+        }
+        else if (first.value == second.value){
+            alert("Everything is good!")
+        }
+        else{
+            alert("The passwords don't match")
+        }
+    })
+</script>
+</html>
